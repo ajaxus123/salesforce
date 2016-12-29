@@ -12,7 +12,13 @@
  *
  *= require_tree .
  *= require_self
+
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+ @import "responsive";
+ @import "style";
+ @import "owl.carousel";
+ @import "color/white";
+ @import "prettyphoto-rails"

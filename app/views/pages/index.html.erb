@@ -1,2 +1,43 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Template Title -->
+    <title>Blue App</title>
+
+    
+    <%= render 'pages/shim' %>
+     
+  </head>
+  <body>
+    
+    <%= render 'pages/header' %>
+
+    <%= render '/pages/menu' %>
+
+    <%= render '/pages/features' %>
+
+    <%= render '/pages/screenshots' %>
+
+
+    <%= render '/pages/description' %>
+
+
+    <%= render '/pages/testimonial' %>
+
+
+    <%= render '/pages/team' %>
+
+    <%= render '/pages/subscribe' %>
+
+    <%= render '/pages/download' %>
+
+    <%= render '/pages/contact' %>
+
+    <%= render '/pages/footer' %>
+  
+  </body>
+</html>

@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require prettyphoto-rails
+//= require prettyphoto-rails-dev
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
