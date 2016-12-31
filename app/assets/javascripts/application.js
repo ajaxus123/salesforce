@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require prettyphoto-rails
-//= require prettyphoto-rails-dev
-//= require bootstrap-sprockets
 //= require turbolinks
+//= require vendor/modernizr.min
+//= require bootstrap.min
+//= require plugins
+//= require main
+//= require wow.min
 //= require_tree .
