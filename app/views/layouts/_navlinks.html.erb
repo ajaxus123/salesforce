@@ -1,0 +1,51 @@
+  <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <% if current_user.nil? && current_page?('/') %>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#banner">Home</a></li>
+                                        <li><a href="#service">Service</a></li>
+                                        <li><a href="#feature">Feature</a></li>
+                                        <li><a href="#utility">Utility</a></li>
+                                        <li><a href="#subscribe">Subscribe</a></li>
+                                        <li><%= link_to "Login", new_user_session_path %></li>
+                                    </ul>    
+                                    <% elsif current_user && current_page?('/') %>
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#banner">Home</a></li>
+                                        <li><a href="#service">Service</a></li>
+                                        <li><a href="#feature">Feature</a></li>
+                                        <li><a href="#utility">Utility</a></li>
+                                        <li><a href="#subscribe">Subscribe</a></li>
+                                        <li><%= link_to "Logout", destroy_user_session_path, 
+                                            method: :delete %></li>
+                                    </ul>
+                                    <% elsif current_user.try(:admin?) %>
+                                    <ul class="nav navbar-nav">
+                                    <li><%= link_to "Manager", manager_path %></li>
+                                    <li><%= link_to "Orders", orders_path %></li>
+                                    <li><%= link_to "Returns", returns_path %></li>
+                                    <li><%= link_to "Dashboard", dashboard_path %></li>
+                                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                                    </ul>
+                                    <% elsif current_user.try(:order_clerk?) %>
+                                    <ul class="nav navbar-nav">
+                                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                                    </ul>
+                                    <% elsif current_user.try(:return_clerk) %>
+                                    <ul class="nav navbar-nav">
+                                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                                    </ul>
+                                    <% elsif current_user.try(:manager?) %>
+                                    <ul class="nav navbar-nav">
+                                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                                    </ul>
+                                    <% elsif current_user %>
+                                    <ul class="nav navbar-nav">
+                                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                                    </ul>
+                                    <% end %>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
