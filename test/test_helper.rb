@@ -15,5 +15,15 @@ class ActionController::TestCase
 end
 
 class ActionDispatch::IntegrationTest
-   include Devise::Test::IntegrationHelpers
+   
+    def sign_in(user:, password:)
+    post user_session_path \
+      "user[email]"    => user.email,
+      "user[password]" => user.password
+  end
+
+  def sign_out(user)
+  	delete destroy_user_session_path
+  end
+
 end
