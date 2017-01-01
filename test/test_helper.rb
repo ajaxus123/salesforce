@@ -16,6 +16,8 @@ end
 
 class ActionDispatch::IntegrationTest
    
+  fixtures :all
+
     def sign_in(user:, password:)
     post user_session_path \
       "user[email]"    => user.email,
