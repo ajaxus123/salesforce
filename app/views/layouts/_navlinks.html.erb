@@ -18,35 +18,7 @@
                                         <li><%= link_to "Logout", destroy_user_session_path, 
                                             method: :delete %></li>
                                     </ul>
-                                    <% elsif current_user.try(:admin?) %>
-                                    <ul class="nav navbar-nav">
-                                    <%= link_to_in_li "Admin", admin_path %>
-                                    <%= link_to_in_li "Manager", manager_path %>
-                                    <%= link_to_in_li "Orders", orders_path %>
-                                    <%= link_to_in_li "Returns", returns_path %>
-                                    <%= link_to_in_li "Dashboard", dashboard_path %>
-                                    <%= link_to_in_li "Logout", destroy_user_session_path, method: :delete %>
-                                    </ul>
-                                    <% elsif current_user.try(:order_clerk?) %>
-                                    <ul class="nav navbar-nav">
-                                    <%= link_to_in_li "Orders", orders_path %>
-                                    <%= link_to_in_li "Logout", destroy_user_session_path, method: :delete %>
-                                    </ul>
-                                    <% elsif current_user.try(:return_clerk) %>
-                                    <ul class="nav navbar-nav">
-                                    <%= link_to_in_li "Returns", returns_path %>
-                                    <%= link_to_in_li "Logout", destroy_user_session_path, method: :delete %>
-                                    </ul>
-                                    <% elsif current_user.try(:manager?) %>
-                                    <ul class="nav navbar-nav">
-                                    <%= link_to_in_li "Manager", manager_path %>
-                                    <%= link_to_in_li "Logout", destroy_user_session_path, method: :delete %>
-                                    </ul>
-                                    <% elsif current_user %>
-                                    <ul class="nav navbar-nav">
-                                    <%= link_to_in_li "Dashboard", dashboard_path %>
-                                    <%= link_to_in_li "Logout", destroy_user_session_path, method: :delete %>
-                                    </ul>
+                                    
                                     <% end %>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
