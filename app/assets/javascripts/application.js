@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require vendor/modernizr.min
+//= require bootstrap.min
+//= require plugins
+//= require main
+//= require wow.min
 //= require_tree .
