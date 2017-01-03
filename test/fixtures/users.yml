@@ -1,8 +1,0 @@
-michael:
-    email: "mbekker@usn.co.za"
-    encrypted_password: <%= Devise.bcrypt(User, 'passw0rd!') %>
-    admin: true
-    
-francois:
-    email: "fheunis@usn.co.za"
-    encrypted_password: <%= Devise.bcrypt(User, 'passw0rd!') %>

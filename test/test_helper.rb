@@ -12,8 +12,13 @@ Minitest::Reporters.use!(
 
 class ActionController::TestCase
   fixtures :all
+  
+  def login_user(user = users(:francois))
+    post sessions_url, params: {
+        session: { email: user.email, password: "password" } }
+  end
+  
 end
 
-class ActionDispatch::IntegrationTest
-   include Devise::Test::IntegrationHelpers
-end
+
+
