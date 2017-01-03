@@ -1,23 +1,23 @@
-<h2>Add a New Store</h2>
 
 <div class="row">
+  <div class="container">
     <div class="col-md-6 col-md-offset-3">
+        <h3>Add a New Store</h3>
+
         <%= form_for(@store) do |f| %>
         
-        <%= f.label :storename %>
-        <%= f.text_field :storename, class: 'form-control' %>
-
-        <%= f.label :storecode %>
-        <%= f.text_field :storecode, class: 'form-control' %>
-
-        <%= f.label :storename %>
-        <%= f.text_field :storename, class: 'form-control' %>
-
-        <%= f.label :storename %>
-        <%= f.text_field :storename, class: 'form-control' %>
-
-        <%= f.submit "Add Store", class: "btn btn-primary" %>
+        <%= f.text_field :storename, class: 'form-control',
+                placeholder: "Store Name", autofocus: true %>
+        </br>
+        <%= f.text_field :storecode, class: 'form-control', placeholder: "Store Code" %>
+        </br>
+        <%= f.text_field :contactname, class: 'form-control', placeholder: "Store Contact" %>
+         </br>
+        <%= f.text_field :phonenumber, class: 'form-control', placeholder: "Contact Number" %>
+        </br>
+        <%= f.submit "Add Store", class: "btn btn-warning" %>
 
         <% end %>
     </div>
+  </div>
 </div>
