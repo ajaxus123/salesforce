@@ -28,7 +28,7 @@ class ActionDispatch::IntegrationTest
     post user_session_path \
       "user[email]"    => user.email,
       "user[password]" => user.password
-  end
+    end
 
   def sign_out(user)
   	delete destroy_user_session_path
