@@ -36,8 +36,12 @@ class StoreTest < ActiveSupport::TestCase
   end
  
  test "store number should not exceed 10 characters" do
-    @store.phonenumber = "a" * 11
+    @store.phonenumber = "2" * 11
     assert_not @store.valid?
+ end
+ 
+ test "store number should not be less than 10 characters" do
+    @store.phonenumber = "2" * 8   
  end
  
  test "store code should not exceed 5 characters" do
@@ -46,7 +50,7 @@ class StoreTest < ActiveSupport::TestCase
  end
  
  test "phonenumber validation should accept valid number" do
-    valid_numbers = %w[0847076391 072190090]
+    valid_numbers = %w[0847076391 0721900901]
     valid_numbers.each do |valid_number|
     @store.phonenumber = valid_number
     assert @store.valid?, "#{valid_number.inspect}, should be valid"
