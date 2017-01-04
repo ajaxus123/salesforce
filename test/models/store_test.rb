@@ -50,7 +50,7 @@ class StoreTest < ActiveSupport::TestCase
  end
  
  test "phonenumber validation should accept valid number" do
-    valid_numbers = %w[0847076391 0721900901]
+    valid_numbers = %w[0847076391 0828109008]
     valid_numbers.each do |valid_number|
     @store.phonenumber = valid_number
     assert @store.valid?, "#{valid_number.inspect}, should be valid"
