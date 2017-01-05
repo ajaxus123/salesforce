@@ -7,7 +7,8 @@ validates :storename, presence: true, uniqueness: true
 validates :storecode, presence: true, length: { maximum: 5 }, uniqueness: true
 validates :contactname, presence: true
 validates :phonenumber, presence: true, length: { maximum: 10, minimum: 10 }, format: { with: VALID_NUMBER_REGEX }, uniqueness: true
-
+validates :latitude, presence: true
+validates :longitude, presence: true
 reverse_geocoded_by :latitude, :longitude
 after_validation :reverse_geocode
 

@@ -3,7 +3,8 @@ require "test_helper"
 class StoreTest < ActiveSupport::TestCase
     def setup
        @user = User.create( email: "mbekker@usn.co.za", password: @password)    
-       @store = Store.new(storename: "PNP Hyper", user_id: 1, storecode: "HC06", contactname: "Maropong", phonenumber: '0514005123' )
+       @store = Store.new(storename: "PNP Hyper", user_id: 1, storecode: "HC06", contactname: "Maropong", phonenumber: '0514005123',
+                            latitude: "-29.109525", longitude: "26.201562")
     end
     
     test "should be valid" do
@@ -65,4 +66,14 @@ class StoreTest < ActiveSupport::TestCase
    end
  end
  
+ test "latitude should be present" do
+   @store.latitude = ""
+   assert_not @store.valid?
+  end
+ 
+ test "longitude should be present" do
+   @store.longitude = ""
+   assert_not @store.valid?
+ end
+
 end

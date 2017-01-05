@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
 
-    before_action :find_store, only: [:show, :edit, :update]
+    before_action :find_store, only: [:show, :update]
 
     def new
         @store = current_user.stores.build
@@ -9,16 +9,14 @@ class StoresController < ApplicationController
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
-            respond_to do |format|
-            format.html { redirect_to @store, notice: 'New store was successfully saved.' }
-            format.json { render :show, status: :created, location: @store }
-        end
+            flash[:success] = "New store was successfully saved"
+            redirect_to @store
         else
-            format.html { render :new, notice: "There appears to be an error, please contact administator" }
-            format.json { render json: @store.errors, status: :unprocessable_entity }
+            flash[:danger] = "There was an error in adding new store"
+            render 'stores/new'
         end
     end
-    
+
     def show
     end
 
