@@ -6,7 +6,7 @@ class CreateStores < ActiveRecord::Migration[5.0]
       t.string :storecode
       t.string :contactname
       t.string :phonenumber
-
+      t.string :channel
       t.timestamps
     end
   end
