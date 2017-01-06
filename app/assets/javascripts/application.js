@@ -18,4 +18,3 @@
 //= require plugins
 //= require main
 //= require wow.min
-//= require_tree .
