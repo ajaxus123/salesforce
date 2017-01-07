@@ -1,0 +1,22 @@
+<%= form_for(@store) do |f| %>
+         
+        <%= f.text_field :storename, class: 'form-control',
+                placeholder: "Store Name", autofocus: true %>
+        </br>
+        <%= f.text_field :storecode, class: 'form-control', placeholder: "Store Code" %>
+        </br>
+        <%= f.text_field :contactname, class: 'form-control', placeholder: "Store Contact" %>
+         </br>
+        <%= f.telephone_field :phonenumber, class: 'form-control', placeholder: "Contact Number" %>
+        </br>
+        <%= f.text_field :latitude, class: 'form-control', placeholder: "Latitude" %>
+        </br>
+        <%= f.text_field :longitude, class: 'form-control', placeholder: "Longitude" %>
+        </br>
+        <div class="span1">
+       <p><%= f.submit "Submit", class: "btn btn-warning btn-block" %></p>
+       <p><%= link_to "Back", dashboard_path, class: "btn btn-warning btn-block" %></p>
+        </div>
+        <% end %>
+        </br>
+        <%= render '/layouts/messages' %>

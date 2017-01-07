@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
 
-    before_action :find_store, only: [:show, :update]
-
+    before_action :find_store, only: [:show, :update, :edit]
+    
     def new
         @store = current_user.stores.build
     end
@@ -21,17 +21,18 @@ class StoresController < ApplicationController
     end
 
     def edit
-        if current_user.admin?
-            @store = Store.find(params[:id])
-        else
-            flash[:danger] = "Sorry but you are not authorized to do this, please contact administrator"
-            render 'show'
-        end
+    
     end
 
 
     def update
-
+        if current_user.admin? && @store.update(store_params)
+            redirect_to @store
+            flash[:success] = "Store was successfully updated"
+        else
+            redirect_to dashboard_path
+            flash[:danger] = "Sorry but only the administrator can edit store details"
+        end
     end
 
     private
@@ -43,4 +44,5 @@ class StoresController < ApplicationController
             @store = Store.find(params[:id])
         end
 
+    
 end
