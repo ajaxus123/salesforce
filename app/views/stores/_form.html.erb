@@ -1,7 +1,7 @@
-<%= form_for(@store) do |f| %>
+        <div id="form">
+        <%= form_for @store do |f| %>
          
-        <%= f.text_field :storename, class: 'form-control',
-                placeholder: "Store Name", autofocus: true %>
+        <%= f.text_field :storename, class: 'form-control', placeholder: "Store Name" %>
         </br>
         <%= f.text_field :storecode, class: 'form-control', placeholder: "Store Code" %>
         </br>
@@ -9,14 +9,16 @@
          </br>
         <%= f.telephone_field :phonenumber, class: 'form-control', placeholder: "Contact Number" %>
         </br>
-        <%= f.text_field :latitude, class: 'form-control', placeholder: "Latitude" %>
+        <%= f.text_field :latitude, class: 'form-control', id: 'latitude' %>
         </br>
-        <%= f.text_field :longitude, class: 'form-control', placeholder: "Longitude" %>
+        <%= f.text_field :longitude, class: 'form-control', id: 'longitude' %>
         </br>
         <div class="span1">
-       <p><%= f.submit "Submit", class: "btn btn-warning btn-block" %></p>
-       <p><%= link_to "Back", dashboard_path, class: "btn btn-warning btn-block" %></p>
+        <p><%= f.submit "Submit", class: "btn btn-warning btn-block" %></p>
+        <p><%= link_to "Back", dashboard_path, class: "btn btn-warning btn-block" %></p>
         </div>
         <% end %>
         </br>
         <%= render '/layouts/messages' %>
+        
+        </div>

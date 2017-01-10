@@ -1,11 +1,12 @@
 class StoresController < ApplicationController
-
-    before_action :find_store, only: [:show, :update, :edit]
-    
+    before_action :authenticate_user!
+    before_action :find_store, only: [:show, :edit, :update]
     def new
-        @store = current_user.stores.build
+     
+     @store = current_user.stores.build
     end
-
+    
+        
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
@@ -18,6 +19,12 @@ class StoresController < ApplicationController
     end
 
     def show
+        if @store.user_id == current_user.id
+            render 'show'
+        else
+            redirect_to dashboard_path
+            flash[:danger] = "Sorry, but you can't do that!"
+        end
     end
 
     def edit
@@ -37,7 +44,7 @@ class StoresController < ApplicationController
 
     private
         def store_params
-           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :longitude, :latitude) 
+           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location) 
         end
 
         def find_store
