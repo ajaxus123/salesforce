@@ -17,8 +17,12 @@ class StoresController < ApplicationController
     end
 
     def show
-        if @store.user_id == current_user.id
+        if @store.user_id == current_user.id 
             render 'show'
+        elsif current_user.try(:admin)
+           render 'show'
+        elsif current_user.try(:manager)
+            render 'shpw'
         else
             redirect_to dashboard_path
             flash[:danger] = "Sorry, but you can't do that!"
@@ -42,7 +46,7 @@ class StoresController < ApplicationController
 
     private
         def store_params
-           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location, :channel_id) 
+           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :channel_id) 
         end
 
         def find_store

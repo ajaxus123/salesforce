@@ -8,6 +8,7 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
 		@kloppers = stores(:kloppers)
 		@user = User.create(email: "ewald@usn.co.za", password: @password)
 		@other_user = User.create(email: "lou@usn.co.za", password: @password)
+		@admin = User.create(email: "mbekker@usn.co.za", password: @password, admin: true)
 	end
 
 	test "Store with lat lon should return address" do
@@ -27,5 +28,4 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
 		@kloppers.save
 		assert_equal @kloppers.user_id, @other_user.id
 	end
-
 end
