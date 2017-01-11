@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
   
-  resources :stores, except: [:destroy, :index]
+ resources :stores, except: [:index,:destroy]
+  
   root 'pages#index'
   get '/manager', to: 'managers#index'
   get '/orders', to: 'orders#index'

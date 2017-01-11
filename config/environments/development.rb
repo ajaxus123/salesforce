@@ -8,7 +8,7 @@ Rails.application.configure do
 
   # Disable Error Logger
   config.logger = ActiveSupport::Logger.new(nil)
-
+  config.web_console.whitelisted_ips = '0.0.0.0/0.0.0.0'
   # Needed for Devise in Development
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

@@ -1,14 +1,20 @@
 hyper:
   storename: Pick 'n Pay Hyper
   storecode: HC03
+  contactname: Pieter
+  phonenumber: 0847074321
   latitude: -29.109525
   longitude: 26.201562
+  user_id: 1
+  channel_id: 1
   
 kloppers:
   storename: kloppers
   storecode: K03
+  contactname: Piet
+  phonenumber: 0847076451
   latitude: -29.113799
   longitude: 26.210660
-
-
+  user_id: 2
+  channel_id: 2
  

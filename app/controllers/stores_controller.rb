@@ -1,20 +1,19 @@
 class StoresController < ApplicationController
-    before_action :authenticate_user!
     before_action :find_store, only: [:show, :edit, :update]
+    
     def new
-     
-     @store = current_user.stores.build
+        @store = current_user.stores.build 
     end
     
         
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
-            flash[:success] = "New store was successfully saved"
             redirect_to @store
+            flash[:success] = "New store was successfully saved"
         else
+            render 'new'
             flash[:danger] = "There was an error in adding new store"
-            render 'stores/new'
         end
     end
 
@@ -44,7 +43,7 @@ class StoresController < ApplicationController
 
     private
         def store_params
-           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location) 
+           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location, :channel_id, :channel_name) 
         end
 
         def find_store

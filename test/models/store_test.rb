@@ -4,7 +4,7 @@ class StoreTest < ActiveSupport::TestCase
     def setup
        @user = User.create( email: "mbekker@usn.co.za", password: @password)    
        @store = Store.new(storename: "PNP Hyper", user_id: 1, storecode: "HC06", contactname: "Maropong", phonenumber: '0514005123',
-                            latitude: "-29.109525", longitude: "26.201562")
+                            latitude: "-29.109525", longitude: "26.201562", channel_id: 1)
     end
     
     test "should be valid" do
@@ -76,4 +76,8 @@ class StoreTest < ActiveSupport::TestCase
    assert_not @store.valid?
  end
 
+  test "channel_id should be present" do
+    @store.channel_id = nil
+    assert_not @store.valid?
+  end
 end
