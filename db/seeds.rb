@@ -10,3 +10,5 @@
 Channel.find_or_create_by(name: "Top End")
 Channel.find_or_create_by(name: "Independent Pharmacy")
 Channel.find_or_create_by(name: "Dischem")
+Channel.find_or_create_by(name: "Clicks")
+Channel.find_or_create_by(name: "SPWH & TS")

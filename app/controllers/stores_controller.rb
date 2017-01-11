@@ -42,7 +42,7 @@ class StoresController < ApplicationController
 
     private
         def store_params
-           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location) 
+           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location, :channel_id) 
         end
 
         def find_store
