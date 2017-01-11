@@ -5,7 +5,6 @@ class StoresController < ApplicationController
         @store = current_user.stores.build 
     end
     
-        
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
@@ -43,7 +42,7 @@ class StoresController < ApplicationController
 
     private
         def store_params
-           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location, :channel_id, :channel_name) 
+           params.require(:store).permit(:storename, :storecode, :contactname, :phonenumber, :latitude, :longitude, :location) 
         end
 
         def find_store
