@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visited: 2017-01-16 13:05:42
+  order: false
+  return: false
+
+two:
+  visited: 2017-01-16 13:05:42
+  order: false
+  return: false

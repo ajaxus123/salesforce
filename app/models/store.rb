@@ -1,8 +1,10 @@
 class Store < ApplicationRecord
 VALID_NUMBER_REGEX = /\A[0-9]+\z/
 VALID_NAME_REGEX = /\A[a-z]+\z/
+
 belongs_to :user
 belongs_to :channel
+
 validates :user_id, presence: true
 validates :storename, presence: true
 validates :storecode, presence: true, length: { maximum: 5 }, uniqueness: true

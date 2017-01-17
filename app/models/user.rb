@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :stores
-
+  
   def remember_me
   	(super == nil) ? '1' : super
   end

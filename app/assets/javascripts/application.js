@@ -19,4 +19,4 @@
 //= require main
 //= require wow.min
 //= require bootstrap_sb_admin_base_v2
-//= require bootstrap/modal
+//= require pace
