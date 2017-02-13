@@ -1,0 +1,27 @@
+  <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <% if current_user.nil? && current_page?('/') %>
+                                    <ul class="nav navbar-nav">
+                                        <li><%= link_to "Home", "#{root_path}#banner" %></li>
+                                        <li><%= link_to "Services", "#{root_path}#service" %></li>
+                                        <li><%= link_to "Features", "#{root_path}#feature" %></li>
+                                        <li><%= link_to "Utility", "#{root_path}#utility" %></li>
+                                        <li><%= link_to "Subscribe", "#{root_path}#subscribe" %></li>
+                                        <li><%= link_to "Login", new_user_session_path %></li>
+                                    <% elsif current_user && current_page?('/') %>
+                                    <ul class="nav navbar-nav">
+                                        <li><%= link_to "Home", "#{root_path}#banner" %></li>
+                                        <li><%= link_to "Services", "#{root_path}#service" %></li>
+                                        <li><%= link_to "Features", "#{root_path}#feature" %></li>
+                                        <li><%= link_to "Utility", "#{root_path}#utility" %></li>
+                                        <li><%= link_to "Subscribe", "#{root_path}#subscribe" %></li>
+                                        <li><%= link_to "Logout", destroy_user_session_path, 
+                                            method: :delete %></li>
+                                    </ul>
+                                    
+                                    <% end %>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
