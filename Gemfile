@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'geocoder', '~> 1.4', '>= 1.4.1'
 gem 'bootstrap_sb_admin_base_v2', '~> 0.3.5'
+gem 'friendly_id', '~> 5.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -58,7 +58,7 @@ class StoresController < ApplicationController
         end
 
         def find_store
-            @store = Store.find(params[:id])
+            @store = Store.friendly.find(params[:id])
         end
 
         def clear_location
