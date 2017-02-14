@@ -259,7 +259,7 @@
 
 <script>
       function initMap() {
-        <%- @stores.near([@latitude, @longitude], 0.5).each do |store| %>
+        <% @stores.near([@latitude, @longitude], 0.5).each do |store| %>
         var lat = <%= store.latitude %>
         var lng = <%= store.longitude %>
         var mylatlng = {lat: lat, lng: lng}
@@ -267,16 +267,22 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: mylatlng
-        });
-        
+        }); 
+
         var marker = new google.maps.Marker({
           position: mylatlng,
           map: map,
           animation: google.maps.Animation.DROP,
         });
           google.maps.event.addListener(marker, 'click', function () {
-          confirm('Would you like to visit this store?'),
-          window.location.href = '<%= store_path(store) %>';
+          var c = confirm('Would you like to visit this store?')
+          if (c === true) {
+          window.location.href = '<%= store_path(store) %>';  
+          }
+          if (c === false) {
+          window.location.reload(false);   
+          }
+          
         });
 
         var contentString = 'Please click on the Marker to visit' + ' ' + '<%= store.storename %>';   
