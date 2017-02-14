@@ -5,6 +5,7 @@ class StoresController < ApplicationController
         @latitude = params[:latitude].to_f
         @longitude = params[:longitude].to_f
         @stores = current_user.stores
+        @locations = @stores.near([@latitude, @longitude], 0.5)
     end
 
     def new

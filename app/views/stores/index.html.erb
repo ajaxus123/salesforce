@@ -259,7 +259,7 @@
 
 <script>
       function initMap() {
-        <% @stores.near([@latitude, @longitude], 0.5).each do |store| %>
+        <% @locations.each do |store| %>
         var lat = <%= store.latitude %>
         var lng = <%= store.longitude %>
         var mylatlng = {lat: lat, lng: lng}
@@ -293,8 +293,7 @@
         google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
         infowindow.open(map, marker);
         });  
-
-    }
+        }
         <% end %>
     </script>
     <script async defer
