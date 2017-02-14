@@ -15,7 +15,8 @@ class StoresController < ApplicationController
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
-            redirect_to @store
+            redirect_to dashboard_path
+            flash[:success] = "Store was successfully saved, Please initiate store visit"
             clear_location
             flash[:success] = "New store was successfully saved"
         else

@@ -280,12 +280,12 @@
           window.location.href = '<%= store_path(store) %>';  
           }
           if (c === false) {
-          window.location.reload(false);   
+          window.location.href = '<%= dashboard_path %>';   
           }
           
         });
 
-        var contentString = 'Please click on the Marker to visit' + ' ' + '<%= store.storename %>';   
+        var contentString = 'Please click on this Marker to visit' + ' ' + '<%= store.storename %>';   
 
         var infowindow = new google.maps.InfoWindow({
             content: contentString
