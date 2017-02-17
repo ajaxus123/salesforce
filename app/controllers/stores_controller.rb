@@ -11,7 +11,7 @@ class StoresController < ApplicationController
     def new
         @store = current_user.stores.build 
     end
-    
+
     def create
         @store = current_user.stores.build(store_params)
         if @store.save
