@@ -61,6 +61,7 @@ class StoresController < ApplicationController
 
         def find_store
             @store = Store.friendly.find(params[:id])
+            redirect_to action: action_name, id: @store.friendly_id, status: 301 unless @store.friendly_id == params[:id]
         end
 
         def clear_location

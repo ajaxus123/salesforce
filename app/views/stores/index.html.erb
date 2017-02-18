@@ -254,7 +254,7 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-
+<%= hidden_field_tag :store_id, ('data.id') %>
 <script type="text/javascript">
 
     var map;
@@ -285,19 +285,19 @@
     google.maps.event.addListener(marker, 'click', function () {
           var c = confirm('Would you like to visit this store?')
           if (c === true) {
-          window.location.href = "stores/" + data.id; 
-          }
+          window.location.href = "stores/" + data.id;
+          }    
           if (c === false) {
           window.location.href = '<%= dashboard_path %>';   
           }
-          });
+        });
 
     // Creating a closure to retain the correct data 
     //Note how I pass the current data in the loop into the closure (marker, data)
     (function(marker, data) {
 
     // Attaching a click event to the current marker
-    google.maps.event.addListener(map, "titlesloaded", function(e) {
+    google.maps.event.addListener(map, "titlesloaded", function() {
     infoWindow.setContent("Click on the marker to visit" + " " + data.storename);
     infoWindow.open(map, marker);
     });
