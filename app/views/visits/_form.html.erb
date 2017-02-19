@@ -1,0 +1,30 @@
+<%= form_for([@store, @store.visits.build]) do |f| %>
+  <p>Please complete the fields below before clicking finalize</p>
+  <form>
+    <div class="form-inline">
+    <%= f.hidden_field :floorwalk %> Did you do a floorwalk?
+    <%= f.label :floorwalk, "Yes", :value => "true"  %>
+    <%= f.radio_button :floorwalk, true %>
+    <%= f.label :floorwalk, "No", :value => "false" %>
+    <%= f.radio_button :floorwalk, false, :checked => true %>
+    </div>
+    </br>
+    <div class="form-inline">
+    <%= f.hidden_field :order %> Did you place an order?
+    <%= f.label :order, "Yes", :value => "true"  %>
+    <%= f.radio_button :order, true %>
+    <%= f.label :order, "No", :value => "false" %>
+    <%= f.radio_button :order, false, :checked => true %>
+    </div>
+    </br>
+    <div class="form-inline">
+    <%= f.hidden_field :order %> Do you have a CRM?
+    <%= f.label :crm, "Yes", :value => "true"  %>
+    <%= f.radio_button :crm, true %>
+    <%= f.label :crm, "No", :value => "false" %>
+    <%= f.radio_button :crm, false, :checked => true %>
+  </div>
+  <% f.submit "Finalize Sales Call", class: "btn btn-primary" %>
+  </form>
+
+<% end %>
