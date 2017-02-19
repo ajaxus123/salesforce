@@ -254,22 +254,20 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-<%= hidden_field_tag :store_id, ('data.id') %>
+
 <script type="text/javascript">
 
     var map;
+
     
     function initMap () {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: <%= params[:latitude] %>, lng: <%= params[:longitude] %>},
           zoom: 18,
           scrollwheel: false,
-        });
+    });
     
-
     var json = <%= raw @locations.map.to_json {|store|}.html_safe %>;
-
-    var infoWindow = new google.maps.InfoWindow();
 
     for (var i = 0, length = json.length; i < length; i++) {
     var data = json[i],
@@ -278,8 +276,7 @@
     var marker = new google.maps.Marker({
     position: LatLng,
     map: map,
-    animation: google.maps.Animation.DROP,
-    title: data.storename
+    animation: google.maps.Animation.DROP
     });
 
     google.maps.event.addListener(marker, 'click', function () {
@@ -290,20 +287,13 @@
           if (c === false) {
           window.location.href = '<%= dashboard_path %>';   
           }
-        });
-
-    // Creating a closure to retain the correct data 
-    //Note how I pass the current data in the loop into the closure (marker, data)
-    (function(marker, data) {
-
-    // Attaching a click event to the current marker
-    google.maps.event.addListener(map, "titlesloaded", function() {
-    infoWindow.setContent("Click on the marker to visit" + " " + data.storename);
-    infoWindow.open(map, marker);
-    });
-    })(marker, data);
-    };
-}
+      });
+    
+        var infowindow = new google.maps.InfoWindow();
+        infowindow.setContent('Click the Marker to visit' + ' ' + data.storename);
+        infowindow.open(map, marker);
+        }
+    }
 
     </script>
 
