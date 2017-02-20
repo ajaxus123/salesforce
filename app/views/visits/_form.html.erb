@@ -1,18 +1,19 @@
 
 <%= form_for([@store, @store.visits.build]) do |f| %>
-  <h3>Did you do a floorwalk? <p class="pull-right"><%= f.check_box :floorwalk, class: "js-switch" %></p></h3>
-  <h3>Did you do an order?        <p class="pull-right"><%= f.check_box :order, class: "js-switch" %></p></h3>
-  <h3>Do you want to log a CRM?     <p class="pull-right"><%= f.check_box :crm, class: "js-switch" %></p></h3>
-           
-   </br>  
-  <%= f.submit "Finalize Sales Call", class: "btn btn-success" %>
+  <h4 id="show-page">Did you do a floorwalk? <p class="pull-right"><%= f.check_box :floorwalk, class: "js-switch" %></p></h4>
+  <h4 id="show-page">Did you do an order?        <p class="pull-right"><%= f.check_box :order, class: "js-switch" %></p></h4>
+  <h4 id="show-page">Do you have any returns?     <p class="pull-right"><%= f.check_box :crm, class: "js-switch" %></p></h4>
+  <h4 id="show-page">Store Contact Person?<p class="pull-right" id="show-field"><%= f.text_field :contact, class: "form-control", placeholder: "Contact Person Name" %></p></h4>   
+  <h4 id="show-page">Estimated Order Value? (R)<p class="pull-right" id="show-field"><%= f.number_field :order_value, value: number_to_currency(f.object.order_value.to_f, delimiter: '', unit: 'R'), step: :any, class: "form-control", placeholder: "Order Value" %></p></h4>   
+  </br> 
+  <div class="col-md-12">
+  <%= f.submit "Finalize Sales Call", class: "btn btn-lg btn-primary btn-block" %>
 <% end %>
-
-<script>
-
+</div>
+<script type="text/javascript">
 var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
 elems.forEach(function(html) {
-  var switchery = new Switchery(html, { size: 'small' });
+  var switchery = new Switchery(html, { size: 'medium', secondaryColor: '#ddd', color: '#428bca' });
 });
 </script>

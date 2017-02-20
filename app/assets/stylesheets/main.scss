@@ -430,14 +430,9 @@ footer p {
   font-weight: 500;
   display: inline-block;
   margin-left: 0.2em;
+
 }
 
-#call-duration {
-  font-weight: 500;
-  font-size: 2.5em;
-  margin-bottom: 0;
-  display: inline-block;
-}
 
 #show-page-map {
   -moz-border-radius: 5px;
@@ -460,4 +455,14 @@ footer p {
  }
  #visit-form {
   margin-top: -4em;
+ }
+
+ #show-page {
+  font-weight: 700;
+  padding: 1em;
+  font-size: 1em;
+ }
+
+ #show-field {
+ width: 50%;
  }
