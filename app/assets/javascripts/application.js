@@ -15,7 +15,9 @@
 //= require turbolinks
 //= require vendor/modernizr.min
 //= require bootstrap.min
+//= require switchery
 //= require plugins
 //= require main
 //= require wow.min
 //= require bootstrap_sb_admin_base_v2
+
