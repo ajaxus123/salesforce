@@ -35,7 +35,7 @@ class StoresController < ApplicationController
         else
             redirect_to dashboard_path
             flash[:danger] = "Sorry, but you can't do that!"
-        end
+        end 
         
     end
 
