@@ -1,0 +1,35 @@
+ var map;
+    
+    function initMap () {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: <%= params[:latitude] %>, lng: <%= params[:longitude] %>},
+          zoom: 18,
+          scrollwheel: false,
+    });
+    
+    var json = <%= raw @locations.map.to_json {|store|}.html_safe %>;
+
+    for (var i = 0, length = json.length; i < length; i++) {
+    var data = json[i],
+      LatLng = {lat: data.latitude, lng: data.longitude};
+
+    var marker = new google.maps.Marker({
+    position: LatLng,
+    map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+          var c = confirm('Would you like to visit this store?')
+          if (c === true) {
+          window.location.href = "stores/" + data.id;
+          }    
+          if (c === false) {
+          window.location.href = '<%= dashboard_path %>';   
+          }
+      });
+    
+        var infowindow = new google.maps.InfoWindow();
+        infowindow.setContent('Click the Marker to visit' + ' ' + data.storename);
+        infowindow.open(map, marker);
+        }
+    }
