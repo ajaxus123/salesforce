@@ -244,10 +244,9 @@
 
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="container-fluid">
                 <div class="row">
                  <%= render '/layouts/messages' %>
-                    <div class="col-md-6">
+                    <div class="col-sm-5 col-md-6">
                         <table class="table">
                         <tbody>
                         <tr>
@@ -273,22 +272,20 @@
                         </tbody>
                         </table>    
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
                         <div class="map-responsive">
                             <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@store.latitude},#{@store.longitude}&markers=#{@store.latitude},#{@store.longitude}&zoom=13&size=540x200&key=AIzaSyDsnTpV-sEjE_DZdX7IggTizvfn9b_eV3s",
                           id: 'show-page-map', alt: "#{@store.storename} on the map"%>
                         </div>
                     </div>
-                    <div class="container">
-                    <div class="row">
-                    <div class="col-md-6" id="visit-form">
-                    <%= render 'visits/form' %>  
                     
+                    <div class="col-sm-5 col-md-6" id="visit-form">
+                    <%= render 'visits/form' %>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0" id="visit-form">
+                    <h4 id="show-page">Previous Sales Call Data:</h4>
                     </div>
                     </div>
-                    </div>
-
-                    
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
