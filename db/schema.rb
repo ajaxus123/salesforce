@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(version: 20170219184539) do
     t.boolean  "floorwalk"
     t.text     "comment"
     t.decimal  "order_value"
-    t.string   "contact"
+    t.string   "contact_person"
     t.integer  "store_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["store_id"], name: "index_visits_on_store_id"
     t.index ["user_id"], name: "index_visits_on_user_id"
   end

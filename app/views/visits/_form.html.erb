@@ -3,10 +3,10 @@
   <h4 id="show-page">Did you do a floorwalk? <p class="pull-right"><%= f.check_box :floorwalk, class: "js-switch" %></p></h4>
   <h4 id="show-page">Did you do an order?        <p class="pull-right"><%= f.check_box :order, class: "js-switch" %></p></h4>
   <h4 id="show-page">Do you have any returns?     <p class="pull-right"><%= f.check_box :crm, class: "js-switch" %></p></h4>
-  <h4 id="show-page">Store Contact Person?<p class="pull-right" id="show-field"><%= f.text_field :contact, class: "form-control", placeholder: "Contact Person Name" %></p></h4>   
-  <h4 id="show-page">Estimated Order Value? (R)<p class="pull-right" id="show-field"><%= f.number_field :order_value, value: number_to_currency(f.object.order_value.to_f, delimiter: '', unit: ''), step: :any, class: "form-control", placeholder: "Order Value" %></p></h4>   
+  <h4 id="show-page">Contact:<p id="show-field"><%= f.text_field :contact_person, class: 'form-control' %></p></h4>    
+  <h4 id="show-page">Order Value(R):    <p id="show-field"><%= f.number_field :order_value, value: number_to_currency(f.object.order_value.to_f, delimiter: '', unit: ''), step: :any, class: "form-control"%></p></h4>
+   
   </br> 
-  
   <%= f.submit "Finalize Sales Call", class: "btn btn-lg btn-primary btn-block" %>
 <% end %>
 

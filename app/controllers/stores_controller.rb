@@ -37,6 +37,7 @@ class StoresController < ApplicationController
             flash[:danger] = "Sorry, but you can't do that!"
         end 
         
+        
     end
 
     def edit

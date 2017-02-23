@@ -4,7 +4,7 @@ before_action :find_store
 
 def create
 	@visit = @store.visits.create(params[:visit].permit(:order, :order_value,
-								 		:crm, :floorwalk, :comment, :price_survey))
+								 		:crm, :floorwalk, :comment, :contact_person))
 	@visit.user_id = current_user.id
 	@visit.save
 	if @visit.save

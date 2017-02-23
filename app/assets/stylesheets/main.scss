@@ -461,8 +461,21 @@ footer p {
   font-weight: 700;
   padding: 1em;
   font-size: 1em;
+  position: relative;
  }
 
  #show-field {
- width: 50%;
+ width: 70%;
+ float: right;
  }
+
+#visit-clearfix {
+  clear: bothl;
+  &:after {
+  clear:both
+  }
+}
+
+#clock {
+  font-size: 3em;
+}

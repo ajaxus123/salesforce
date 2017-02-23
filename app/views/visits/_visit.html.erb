@@ -1,5 +1,6 @@
-<% @store.visits.last do |visit| %>
-<p><%= store.visit.order_value %></p>
-<p><%= store.visit.contact %></p>
+<div class="visit clearfix">
+<p id="show-page">Contact of Previous Call: <%= visit.contact_person %></p>
+<p id="show-page">Last Order Value: R <%= visit.order_value %></p>
+<p id="show-page">Last Visit: <%= visit.created_at %></p>
+</div>
 
-<% end %>
