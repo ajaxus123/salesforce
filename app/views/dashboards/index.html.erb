@@ -245,7 +245,9 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h4>Welcome to your dashboard <%= @current_user.first_name %> <%= @current_user.last_name %>!</h4>
-                        
+                        <div class="map-container">
+                        <div id="map"></div>
+                        </div>
                         </div>
                         </br> 
                      <div class="col-lg-4 offset-8">
@@ -260,6 +262,8 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-        <script type="text/javascript" src="/javascript/lib/getlocation.js"></script>
-         <script type="text/javascript" src="/javascript/lib/storevisits.js"></script>
-         
+        <script type="text/javascript" src="javascript/lib/tracklocation.js">
+        </script>
+         <script type="text/javascript" src="javascript/lib/storevisits.js"></script>
+     <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4Ryoyb6OabzRw97rhz1xDNCwmt5Ot9jI"></script>    

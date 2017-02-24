@@ -1,5 +1,5 @@
 var watchID;
-         var geoLoc;
+var geoLoc;
          
          function showLocation(position) {
             var latitude = position.coords.latitude;
