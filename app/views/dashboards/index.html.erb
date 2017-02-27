@@ -243,18 +243,13 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-lg-8 col-md-10 col-sm-12 col-xs-14">
                         <h4>Welcome to your dashboard <%= @current_user.first_name %> <%= @current_user.last_name %>!</h4>
-                        <div class="map-container">
+                        <div id="map-container">
+
                         <div id="map"></div>
                         </div>
                         </div>
-                        </br> 
-                     <div class="col-md-4 offset-8">
-                     <form class="pull-right">
-                    <input type="button" onclick="getLocationUpdate();" value="Initiate Store Visit", class="btn btn-primary", id="button-1"/>
-                    </form>
-                    </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
@@ -264,6 +259,5 @@
         <!-- /#page-wrapper -->
         <script type="text/javascript" src="javascript/lib/tracklocation.js">
         </script>
-         <script type="text/javascript" src="javascript/lib/storevisits.js"></script>
      <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4Ryoyb6OabzRw97rhz1xDNCwmt5Ot9jI"></script>    
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4Ryoyb6OabzRw97rhz1xDNCwmt5Ot9jI&callback=initMap"></script>    
